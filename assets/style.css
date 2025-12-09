@@ -322,63 +322,11 @@ h2 {
   font-size: 0.85em;
   vertical-align: super;
   margin-left: 2px;
-  position: relative;
-  cursor: pointer;
   border-bottom: none;
-  outline: none;
 }
 
 .citation-ref:hover {
   border-bottom: none;
-}
-
-.citation-ref:focus {
-  outline: none;
-}
-
-.citation-ref::after {
-  content: attr(data-citation);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  font-size: 13px;
-  white-space: normal;
-  max-width: 300px;
-  width: max-content;
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.4;
-  text-align: left;
-}
-
-.citation-ref::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 2px;
-  border: 5px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
-}
-
-.citation-ref:hover::after,
-.citation-ref:hover::before {
-  opacity: 1;
 }
 
 .fade-in {
@@ -406,10 +354,5 @@ h2 {
 
   h2 {
     font-size: 22px;
-  }
-
-  .citation-ref::after,
-  .citation-ref::before {
-    display: none;
   }
 }
