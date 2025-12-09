@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
   });
 });
 
-// Smooth page transitions
+// Smooth page transitions - only fade main content, not nav
 document.querySelectorAll("a").forEach(link => {
   if (link.hostname === window.location.hostname || !link.hostname) {
     link.addEventListener("click", e => {
@@ -21,9 +21,11 @@ document.querySelectorAll("a").forEach(link => {
       if (href && !href.startsWith("#") && !href.startsWith("mailto:") && !link.hasAttribute("target")) {
         e.preventDefault();
         
-        // Fade out
-        document.body.style.transition = "opacity 0.2s ease";
-        document.body.style.opacity = "0";
+        // Fade out only main content
+        const mainContent = document.querySelector(".main-content");
+        if (mainContent) {
+          mainContent.style.opacity = "0";
+        }
         
         // Navigate after fade
         setTimeout(() => {
