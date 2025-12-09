@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", "Palatino", "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.58;
+  color: #111;
+  background: #fbfaf8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: 650px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 28px;
+  letter-spacing: -0.4px;
+}
+
+p {
+  margin-bottom: 24px;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  transition: border-color 0.25s ease;
+}
+
+a:hover {
+  border-color: rgba(0,0,0,.3);
+}
+
+.essay-list {
+  list-style: none;
+  padding: 0;
+}
+
+.essay-list li {
+  margin-bottom: 12px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+}
