@@ -325,10 +325,15 @@ h2 {
   position: relative;
   cursor: pointer;
   border-bottom: none;
+  outline: none;
 }
 
 .citation-ref:hover {
   border-bottom: none;
+}
+
+.citation-ref:focus {
+  outline: none;
 }
 
 .citation-ref::after {
@@ -401,5 +406,10 @@ h2 {
 
   h2 {
     font-size: 22px;
+  }
+
+  .citation-ref::after,
+  .citation-ref::before {
+    display: none;
   }
 }
