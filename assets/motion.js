@@ -1,28 +1,35 @@
-// On load, animate fade-in
+// Subtle fade-in animation on page load
 window.addEventListener("load", () => {
-  document.querySelectorAll(".fade-in").forEach((el, i) => {
+  const fadeElements = document.querySelectorAll(".fade-in");
+  
+  fadeElements.forEach((el, index) => {
     setTimeout(() => {
       el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
       el.style.opacity = "1";
       el.style.transform = "translateY(0)";
-    }, i * 80);
+    }, index * 100);
   });
 });
 
-// Smooth fade-out when navigating between pages
+// Smooth page transitions
 document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", e => {
-    if (
-      link.href &&
-      link.href !== window.location.href &&
-      !link.href.includes("#")
-    ) {
-      e.preventDefault();
-      document.body.style.transition = "opacity 0.3s ease";
-      document.body.style.opacity = 0;
-      setTimeout(() => {
-        window.location.href = link.href;
-      }, 300);
-    }
-  });
+  if (link.hostname === window.location.hostname || !link.hostname) {
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      
+      // Only apply transition for internal links
+      if (href && !href.startsWith("#") && !href.startsWith("mailto:") && !link.hasAttribute("target")) {
+        e.preventDefault();
+        
+        // Fade out
+        document.body.style.transition = "opacity 0.2s ease";
+        document.body.style.opacity = "0";
+        
+        // Navigate after fade
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      }
+    });
+  }
 });
