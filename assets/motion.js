@@ -4,10 +4,10 @@ window.addEventListener("load", () => {
   
   fadeElements.forEach((el, index) => {
     setTimeout(() => {
-      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      el.style.transition = "opacity 0.3s ease-out, transform 0.3s ease-out";
       el.style.opacity = "1";
       el.style.transform = "translateY(0)";
-    }, index * 100);
+    }, index * 50);
   });
 });
 
@@ -30,7 +30,7 @@ document.querySelectorAll("a").forEach(link => {
         // Navigate after fade
         setTimeout(() => {
           window.location.href = href;
-        }, 200);
+        }, 100);
       }
     });
   }
