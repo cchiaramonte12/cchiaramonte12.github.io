@@ -253,6 +253,35 @@ h2 {
   opacity: 1;
 }
 
+.page-footer {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.page-footer a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.5;
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.page-footer a:hover {
+  opacity: 0.8;
+  border-bottom-color: var(--text-color);
+}
+
+.footer-separator {
+  margin: 0 8px;
+  opacity: 0.3;
+}
+
 .citations-divider {
   margin: 48px 0 32px 0;
   border-top: 1px solid var(--border-color);
