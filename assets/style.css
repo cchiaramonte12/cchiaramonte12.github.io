@@ -203,14 +203,22 @@ h2 {
   margin-bottom: 0;
 }
 
-.essay-body p a:not(.citation-ref) {
-  color: var(--text-color);
-  text-decoration: none;
+.essay-body p a:not(.citation-ref):any-link {
+  color: var(--text-color) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-underline-offset: unset;
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
   transition: border-color 0.2s ease;
 }
 
-.essay-body p a:not(.citation-ref):hover {
+.essay-body p a:not(.citation-ref):any-link:hover,
+.essay-body p a:not(.citation-ref):any-link:focus-visible {
+  color: var(--text-color) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
   border-bottom-color: rgba(0, 0, 0, 0.55);
 }
 
